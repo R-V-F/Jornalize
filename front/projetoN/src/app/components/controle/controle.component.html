@@ -1,0 +1,28 @@
+<div class="controle-container" *ngIf="showSettings">
+    <div class="columns-settings">
+        <div class="menos-btn">
+            <button class="columns-settings-btn" id="menos-btn" (click)="removeColumn()" [disabled]="number_of_columns === 1">-</button>
+        </div>
+        <div class="display-columns">
+            {{number_of_columns}}
+        </div>
+        <div class="mais-btn">
+            <button class="columns-settings-btn" id="mais-btn" (click)="addColumn()" [disabled]="number_of_columns === 10">+</button>
+        </div>
+    </div>
+    <div class="bypass-settings">
+        <div class="bypass-item">
+            <span style="font-weight: 500; color: white;" class="bypass-item">&nbsp;12ft.io</span>
+            <label class="switch" style="float: right;margin-right: 3px;">
+                <input type="checkbox" (click)="toggleBypass()">
+                <span class="slider"></span>
+              </label>
+        </div>
+    </div>
+</div>
+
+<div class="setting">
+    <button class="setting-btn" (click)="toggleSettings()">
+        <img src="/assets/settings.png" alt="" style="width: 25px;">
+    </button>
+</div>

@@ -1,0 +1,143 @@
+body, html {
+  height: 100%;
+  margin: 0;
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  height: 100vh; /* 100% viewport height */
+  background-color: #202124;
+
+}
+
+.grid-item {
+  scrollbar-width: thin;
+  scrollbar-color: #131313 transparent;
+  scroll-behavior: smooth;
+  border-right: 1px solid #7a7a7a;
+  overflow-y: auto;
+}
+
+.searchBtn {
+  flex: 1;
+  margin-left: 2px;
+}
+
+.items {
+  border: 1px solid #444444;
+  border-radius: 6px;
+  height: 150px;
+  margin: 2px;
+  /* background-color: #202124; */
+  display: grid;
+  grid-template-columns: 22fr 11fr;
+  grid-template-rows: 120px 30px;
+  grid-template-areas:
+    "titulo imgsrc"
+    "t-stamp t-stamp";
+}
+.titulo {
+  grid-area: titulo;
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 16px;
+  color: white;
+}
+.fonte {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.imgsrc {
+  grid-area: imgsrc;
+  /* border: 1px solid blue; */
+  padding: 8px;
+}
+
+.t-stamp {
+  grid-area: t-stamp;
+  font-size: small;
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+
+
+}
+.imgspec {
+  width: 110px;
+  height: 85px;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+
+
+
+.thumb {
+  width: 15px;
+  height: 15px;
+}
+
+.titulo-f {
+  color: #7cb4f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.t-stamp {
+  color: white;
+}
+a {
+  text-decoration: none;
+  /* Optional: You can also set other styles, such as color, font-weight, etc. */
+  color: #5998fe;
+  width: auto;
+  align-self: center;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  /* height: 32px; */
+  background-color: transparent;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.search {
+  border-radius: 6px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  width: 80%;
+  margin-left: 20px;
+  align-items: center;
+  /* margin-left: 8%; */
+}
+
+.inputTxt {
+  flex: 9;
+  border-radius: 10px;
+  color: white;
+  background-color: #303134;
+}
+
+button {
+  background-color: transparent;
+}
+
+input {
+  z-index: initial;
+  outline: none;
+  height: 23px;
+}
+
+.titulo-texto {
+  margin-top: 8px;
+}
+
+input {
+  text-indent: 2%;
+}

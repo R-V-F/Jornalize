@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    width: fit-content;
+    margin: 0;
+    background-color: #202124;
+    scrollbar-width: thin;
+    scrollbar-color: #131313 transparent;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #131313 transparent;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

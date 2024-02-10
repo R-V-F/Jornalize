@@ -1,0 +1,27 @@
+<div class="grid-container" [style.grid-template-columns]="getGridTemplateColumns()">
+  <div class="grid-item" *ngFor="let i of getRange(column_number); let index = index">
+
+    <div class="search">
+      <img src="assets/search_icon.png" alt="" class="icon" (click)="fetchNewsV2(list_of_search_terms[index], index)">
+      <input type="text" class="inputTxt" [(ngModel)]="list_of_search_terms[index]" (keypress)="checkEnterKey($event, index)">
+    </div>
+
+    <div *ngFor="let newsItem of list_of_news_list[i]" class="items">
+      <div class="imgsrc"><img src="{{ newsItem.imgsrc }}" alt="" class="imgspec"></div>
+      <div class="titulo"> 
+        <div class="fonte">
+          <img src={{newsItem.thumb}} alt="" class="thumb">
+          &nbsp;{{ newsItem.fonte }}
+        </div>
+        <div class="titulo-texto">
+          <a href="{{ newsItem.url }}"><span class="titulo-f">{{ newsItem.titulo }}</span></a>
+        </div>
+      </div>
+      <div class="t-stamp">{{ newsItem.data }} {{newsItem.tdif_display}} - {{mock_name3 | namePipe}} </div>
+      <!-- Add more properties as needed -->
+    </div>
+  </div>
+
+</div>
+
+<app-controle (dataToParent)="updateColumnsNumber($event)" (dataToParentBool)="updateBypass($event)"></app-controle>

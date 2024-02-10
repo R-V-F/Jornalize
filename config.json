@@ -1,0 +1,6 @@
+{
+    "host": "database-1.cve8wekscbc9.us-east-2.rds.amazonaws.com",
+    "user": "admin",
+    "password": "renan123",
+    "database": "db_projn"
+  }
