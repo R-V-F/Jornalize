@@ -29,6 +29,30 @@ format_string = "%d/%m/%Y %H:%M"
 # Create a cursor object to interact with the database
 cursor = connection.cursor()
 
+def getAuthor(url):
+    # Send an HTTP request to the URL
+    response = requests.get(url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the HTML content of the page
+        soup = BeautifulSoup(response.text, 'html.parser')
+        article_author_html = soup.find('a','author-name-link')
+        if(article_author_html is not None): 
+            article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+            print(article_author)
+            return article_author
+        else:
+            article_author_html = soup.find('span','author-name')
+            if(article_author_html is not None):
+                article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+                print(article_author)
+                return article_author
+            else:
+                return -1 
+    else:
+        print(f"Failed to fetch the page getAuthor. Status code: {response.status_code}")
+
 def scrape_news(url):
     # Send an HTTP request to the URL
     response = requests.get(url)
@@ -46,7 +70,6 @@ def scrape_news(url):
         for article in articles:
             article_link_html = article.find('a')
             article_link = 'https://www.gazetadopovo.com.br' + article_link_html.get('href')
-
             i += 1
             article_title_html = article.find('h2')
             article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
@@ -60,13 +83,16 @@ def scrape_news(url):
             # Format the datetime object as a string in the desired format
             formatted_datetime = datetime_object.strftime(f"%Y-%m-%d %H:%M:%S")
             #YYYY-MM-DD HH:MM:SS
+            article_author = getAuthor(article_link)
+            if(article_author == -1): continue
             try:
-                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte) VALUES (%s, %s, %s, %s, %s);"
-                cursor.execute(query, (article_link,article_title,img_src,formatted_datetime, 'gazeta'))
+                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
+                cursor.execute(query, (article_link,article_title,img_src,formatted_datetime, 'Gazeta do Povo',article_author))
                 connection.commit()
-                print(i)
+                print('count:',i)
                 print(article_title)
                 print(article_link)
+                print(article_author)
                 print(formatted_datetime)
                 print(img_src)
                 print(query)
