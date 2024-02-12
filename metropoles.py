@@ -187,7 +187,7 @@ def scrape_news_noblat_model(soup):
                 connection.commit()
             except Exception as e:
                 # Handle other exceptions
-                print(f"An unexpected error occurred:{e}")
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}")
         except Exception as e:
             print(f"Exceção capturada: {e}")
     # print(i,j,k)
@@ -233,6 +233,14 @@ if __name__ == "__main__":
     #     # Call the function with the target URL
     #     scrape_news(target_url)
     scrape_news('https://www.metropoles.com/blog-do-noblat')
+
+    # Get the current timestamp
+    end_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    end_formatted_timestamp = end_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Fim:", end_formatted_timestamp)
+
     # Close the cursor and connection
     cursor.close()
     connection.close()

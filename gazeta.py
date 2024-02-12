@@ -45,13 +45,13 @@ def getAuthor(url):
         article_author_html = soup.find('a','author-name-link')
         if(article_author_html is not None): 
             article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
-            print(article_author)
+            # print(article_author)
             return article_author
         else:
             article_author_html = soup.find('span','author-name')
             if(article_author_html is not None):
                 article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
-                print(article_author)
+                # print(article_author)
                 return article_author
             else:
                 return ''
@@ -102,7 +102,7 @@ def scrape_news(url):
                 # print(query)
             except Exception as e:
                 # Handle other exceptions
-                print(f"An unexpected error occurred:{i} \n{e}")
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}")
     else:
         print(f"Failed to fetch the page. Status code: {response.status_code}")
 
@@ -119,6 +119,14 @@ if __name__ == "__main__":
     
     # Call the function with the target URL
     scrape_news(target_url)
+
+    # Get the current timestamp
+    end_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    end_formatted_timestamp = end_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Fim:", end_formatted_timestamp)
+
 
     # Close the cursor and connection
     cursor.close()

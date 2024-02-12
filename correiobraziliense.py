@@ -103,7 +103,7 @@ def scrape_news(url):
                 # print(query)
             except Exception as e:
                 # Handle other exceptions
-                print(f"An unexpected error occurred:{i} \n{e}")
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}")
     else:
         print(f"Failed to fetch the page. Status code: {response.status_code}")
 
@@ -121,6 +121,13 @@ if __name__ == "__main__":
     
     scrape_news(economia_url)
     scrape_news(politica_url)
+
+    # Get the current timestamp
+    end_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    end_formatted_timestamp = end_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Fim:", end_formatted_timestamp)
 
     
     # Close the cursor and connection

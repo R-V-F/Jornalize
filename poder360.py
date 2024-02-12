@@ -182,7 +182,7 @@ def scrape_news(url):
                 # print(i)
             except Exception as e:
                 # Handle other exceptions
-                print(f"An unexpected error occurred:{i} \n{e}")
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
             
     else:
         print(f"\n\nFailed to fetch the page. Status code: {response.status_code}\n\n")
@@ -199,6 +199,14 @@ if __name__ == "__main__":
     
     # Call the function with the target URL
     scrape_news(target_url)
+
+    # Get the current timestamp
+    end_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    end_formatted_timestamp = end_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Fim:", end_formatted_timestamp)
+
     # Close the cursor and connection
     cursor.close()
     connection.close()
