@@ -1,2 +1,4 @@
 ProjectNKey.pem
 manager.js
+log
+log/*.log
