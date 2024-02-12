@@ -182,7 +182,7 @@ def scrape_news(url):
                 # print(i)
             except Exception as e:
                 # Handle other exceptions
-                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}")
             
     else:
         print(f"\n\nFailed to fetch the page. Status code: {response.status_code}\n\n")

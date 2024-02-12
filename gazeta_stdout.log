@@ -1,0 +1,192 @@
+Raquel Derevecki
+count: 1
+Cantora brinca sobre “gostar de marginal” e tem colar de R$ 100 mil furtado
+https://www.gazetadopovo.com.br/vida-e-cidadania/cantora-brinca-sobre-marginal-e-tem-colar-de-r-100-mil-furtado/
+Raquel Derevecki
+2024-02-12 16:24:00
+https://media.gazetadopovo.com.br/2024/02/12161905/manu-batidao-carnaval-876x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Isabella de Paula
+count: 2
+Em meio à crescente perseguição, ditadura de Maduro prende outra ativista crítica do regime
+https://www.gazetadopovo.com.br/mundo/em-meio-a-crescente-perseguicao-ditadura-de-maduro-prende-outra-ativista-critica-do-regime/
+Isabella de Paula
+2024-02-12 16:04:00
+https://media.gazetadopovo.com.br/2024/02/12154406/f3196c271009e75a57f0be0137afa55391302bd4w-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Leonardo Desideri
+count: 3
+“Gabinete da lacração”: Secom de Lula usa redes para provocar oposição
+https://www.gazetadopovo.com.br/vida-e-cidadania/gabinete-da-lacracao-secom-de-lula-usa-redes-para-provocar-oposicao/
+Leonardo Desideri
+2024-02-12 16:01:00
+https://media.gazetadopovo.com.br/2024/02/09114230/postagens-secom-660x372.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Isabella de Paula
+count: 4
+Rússia impõe sanções a parlamentares, soldados e professores britânicos que apoiam a Ucrânia
+https://www.gazetadopovo.com.br/mundo/russia-impoe-sancoes-a-parlamentares-soldados-e-professores-britanicos-que-apoiam-a-ucrania/
+Isabella de Paula
+2024-02-12 15:04:00
+https://media.gazetadopovo.com.br/2022/03/20120438/8c500ef0-c2dd-11eb-a353-b301189aa64b-wp-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Raquel Derevecki
+count: 5
+Barcos colidem em Miami, nos Estados Unidos, e deixam 13 feridos
+https://www.gazetadopovo.com.br/mundo/barcos-colidem-em-miami-nos-estados-unidos-e-deixam-13-feridos/
+Raquel Derevecki
+2024-02-12 15:03:00
+https://media.gazetadopovo.com.br/2024/02/12150117/acidente-barcos-660x372.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 6
+Pai de policial preso no 8/1 pede “misericórdia” a Moraes
+https://www.gazetadopovo.com.br/republica/pai-policial-preso-8-1-pede-misericordia-moraes/
+Guilherme Grandi
+2024-02-12 14:37:00
+https://media.gazetadopovo.com.br/2024/02/12143713/brasilia-protesto-8-janeiro-foto-andre-borges-efe-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Rodrigo Constantino
+count: 7
+Bolsonaro deu um golpe
+https://www.gazetadopovo.com.br/rodrigo-constantino/bolsonaro-deu-um-golpe/
+Rodrigo Constantino
+2024-02-12 14:34:00
+https://media.gazetadopovo.com.br/2020/10/11161009/5a6bb6ea-7367-11e9-87cb-00505697492c-wp-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Isabella de Paula
+count: 8
+Quadrilha realiza assalto milionário no Paraguai; brasileiros estão entre os suspeitos
+https://www.gazetadopovo.com.br/mundo/quadrilha-realiza-assalto-milionario-no-paraguai-brasileiros-estao-entre-os-suspeitos/
+Isabella de Paula
+2024-02-12 14:22:00
+https://media.gazetadopovo.com.br/2024/02/12141904/MicrosoftTeams-image-77-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Desirée Peñalba
+count: 9
+Projeto de Tereza Cristina aprovado no Senado ajuda a combater “assédio judicial”
+https://www.gazetadopovo.com.br/vozes/entrelinhas/projeto-de-tereza-cristina-aprovado-no-senado-ajuda-a-combater-assedio-judicial/
+Desirée Peñalba
+2024-02-12 14:15:00
+https://media.gazetadopovo.com.br/2024/02/09174953/tereza01-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+PRSA
+count: 10
+Mais1.Café abre mais de 80 unidades em 2023
+https://www.gazetadopovo.com.br/vozes/parana-sa/mais1-cafe-abre-mais-de-80-unidades-em-2023/
+PRSA
+2024-02-12 13:40:00
+https://media.gazetadopovo.com.br/2024/02/08213041/mais1-cafe-divulgacao-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 11
+Alvo da Lava Jato, Sérgio Cabral lamenta estar longe do Carnaval e perda de antigo aliado
+https://www.gazetadopovo.com.br/republica/alvo-lava-jato-cabral-lamenta-longe-carnaval-perda-antigo-aliado/
+Guilherme Grandi
+2024-02-12 13:33:00
+https://media.gazetadopovo.com.br/2024/02/12133309/sergio-cabral-foto-reproducao-Instagram-Sergio-Cabral-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 12
+Novo líder da Frente Evangélica diz que há “bibliofobia” e “perseguição” aos religiosos
+https://www.gazetadopovo.com.br/republica/novo-lider-frente-evangelica-bibliofobia-perseguicao-religiosos/
+Guilherme Grandi
+2024-02-12 12:59:00
+https://media.gazetadopovo.com.br/2024/02/12125841/eli-borges-foto-zeca-ribeiro-camara-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 13
+Câmara abre investigação para apurar ataque hacker contra Moraes e Lula
+https://www.gazetadopovo.com.br/republica/camara-investigacao-ataque-hacker-moraes-lula/
+Guilherme Grandi
+2024-02-12 12:18:00
+https://media.gazetadopovo.com.br/2024/02/12121739/lula-com-moraes-foto-fabio-rodrigues-pozzebom-agencia-brasil-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Raquel Derevecki, com Agência EFE
+count: 14
+Israel resgata dois reféns idosos sequestrados pelo Hamas
+https://www.gazetadopovo.com.br/mundo/israel-resgata-dois-refens-idosos-sequestrados-pelo-hamas/
+Raquel Derevecki, com Agência EFE
+2024-02-12 12:08:00
+https://media.gazetadopovo.com.br/2024/02/12120634/refens-resgatados-de-israel-660x372.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Fabio Calsavara
+count: 15
+Projeto criado por estudantes paranaenses é premiado pela Nasa
+https://www.gazetadopovo.com.br/parana/projeto-estudantes-paranaenses-premiado-nasa/
+Fabio Calsavara
+2024-02-12 11:20:00
+https://media.gazetadopovo.com.br/2024/02/01212228/DesafioNasa2023-55-1-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Gazeta do Povo
+count: 16
+Além de ser mau exemplo, governo Lula incentiva crime ao relativizar punição
+https://www.gazetadopovo.com.br/ideias/alem-de-mau-exemplo-governo-lula-incentiva-crime-ao-relativizar-punicao/
+Gazeta do Povo
+2024-02-12 11:13:00
+https://media.gazetadopovo.com.br/2024/02/09163510/ADRILLES300823-3-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 17
+Prates vai ao Oriente Médio e sinaliza parcerias da Petrobras com petroleiras árabes
+https://www.gazetadopovo.com.br/economia/prates-oriente-medio-sinaliza-parcerias-petrobras-petroleiras-arabes/
+Guilherme Grandi
+2024-02-12 11:09:00
+https://media.gazetadopovo.com.br/2024/02/12110808/jean-paul-prates-foto-tomaz-silva-agencia-brasil-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Raquel Derevecki, com Agência EFE
+count: 18
+Milei se encontra com Papa Francisco e o presenteia com alfajores
+https://www.gazetadopovo.com.br/mundo/milei-se-encontra-com-papa-francisco-e-o-presenteia-com-alfajores/
+Raquel Derevecki, com Agência EFE
+2024-02-12 10:36:00
+https://media.gazetadopovo.com.br/2024/02/12103259/milei-encontra-papa-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 19
+Blocos de SP politizam carnaval e fazem campanha velada a Boulos
+https://www.gazetadopovo.com.br/sao-paulo/blocos-sp-politizam-carnaval-fazem-campanha-velada-boulos/
+Guilherme Grandi
+2024-02-12 10:34:00
+https://media.gazetadopovo.com.br/2024/02/12103348/guilherme-boulos-foto-paulo-pinto-agencia-brasil-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Desirée Peñalba
+count: 20
+Instituto Liberal lança calendário 2024 para seu núcleo de formação
+https://www.gazetadopovo.com.br/vozes/entrelinhas/instituto-liberal-lanca-calendario-2024-para-seu-nucleo-de-formacao/
+Desirée Peñalba
+2024-02-12 10:00:00
+https://media.gazetadopovo.com.br/2024/02/09103904/il-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Guilherme Grandi
+count: 21
+Toffoli pede vista e suspende julgamento de recurso de Collor no STF
+https://www.gazetadopovo.com.br/republica/toffoli-pede-vista-suspende-julgamento-recurso-collor-stf/
+Guilherme Grandi
+2024-02-12 09:57:00
+https://media.gazetadopovo.com.br/2023/05/17170332/collor-1-crop-20230517200312-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Equipe Pinó
+count: 22
+Além de trilhas, Parque Vila Velha tem de voo de balão a feira de artesanato em fevereiro
+https://www.gazetadopovo.com.br/pino/alem-de-trilhas-parque-vila-velha-tem-de-voo-de-balao-a-feira-de-artesanato-em-fevereiro/
+Equipe Pinó
+2024-02-12 09:16:00
+https://media.gazetadopovo.com.br/2024/02/08233845/bal%C3%A3o_editada3-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Julio Moreira
+count: 23
+O que podemos esperar da reforma tributária em 2024
+https://www.gazetadopovo.com.br/opiniao/artigos/que-podemos-esperar-da-reforma-tributaria-em-2024/
+Julio Moreira
+2024-02-12 08:01:00
+https://media.gazetadopovo.com.br/2023/12/27153844/ballots-1195005_1280-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);
+Flávia Lima
+count: 24
+O desafio de cuidar das pessoas com asma no Brasil
+https://www.gazetadopovo.com.br/opiniao/artigos/desafio-cuidar-pessoas-com-asma-no-brasil/
+Flávia Lima
+2024-02-12 08:00:00
+https://media.gazetadopovo.com.br/2024/02/08174233/asma2-960x540.jpg
+INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);

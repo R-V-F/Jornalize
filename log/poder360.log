@@ -1,0 +1,16 @@
+  File "/home/ubuntu/ProjetoN/Jornalize/poder360.py", line 185
+    if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
+                                                                                   ^
+SyntaxError: unmatched ')'
+  File "/home/ubuntu/ProjetoN/Jornalize/poder360.py", line 185
+    if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
+                                                                                   ^
+SyntaxError: unmatched ')'
+  File "/home/ubuntu/ProjetoN/Jornalize/poder360.py", line 185
+    if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
+                                                                                   ^
+SyntaxError: unmatched ')'
+  File "/home/ubuntu/ProjetoN/Jornalize/poder360.py", line 185
+    if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}"))
+                                                                                   ^
+SyntaxError: unmatched ')'
