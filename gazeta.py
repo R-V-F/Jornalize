@@ -49,7 +49,7 @@ def getAuthor(url):
                 print(article_author)
                 return article_author
             else:
-                return -1 
+                return ''
     else:
         print(f"Failed to fetch the page getAuthor. Status code: {response.status_code}")
 
@@ -84,7 +84,6 @@ def scrape_news(url):
             formatted_datetime = datetime_object.strftime(f"%Y-%m-%d %H:%M:%S")
             #YYYY-MM-DD HH:MM:SS
             article_author = getAuthor(article_link)
-            if(article_author == -1): continue
             try:
                 query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
                 cursor.execute(query, (article_link,article_title,img_src,formatted_datetime, 'Gazeta do Povo',article_author))

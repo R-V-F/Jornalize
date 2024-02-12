@@ -25,6 +25,27 @@ connection = mysql.connector.connect(
 # Create a cursor object to interact with the database
 cursor = connection.cursor()
 
+def getAuthor(url):
+     # Send an HTTP request to the URL
+    response = requests.get(url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the HTML content of the page
+        soup = BeautifulSoup(response.text, 'html.parser')
+        article_author_html = soup.find('strong','c-signature__author')
+        if(article_author_html is not None):
+            article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+            return article_author
+        else:
+            article_author_html = soup.find('h4','c-top-columnist__name')
+            if(article_author_html is not None):
+                article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+                return article_author
+            else:
+                return ''
+    else:
+        print(f"Failed to fetch the page. Status code: {response.status_code}")
 
 def scrape_news(url):
     # Send an HTTP request to the URL
@@ -54,15 +75,15 @@ def scrape_news(url):
             else: img_src = 'NULL'
             article_timestamp_html = latest.find('time')
             article_timestamp = article_timestamp_html.get('datetime')
-
-            
+            article_author = getAuthor(article_link)            
             try:
-                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte) VALUES (%s, %s, %s, %s, %s);"
-                cursor.execute(query, (article_link,article_title,img_src,article_timestamp, 'folha'))
+                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
+                cursor.execute(query, (article_link,article_title,img_src,article_timestamp, 'Folha de S. Paulo',article_author))
                 connection.commit()
                 print(i)
                 print(article_title)
                 print(article_link)
+                print(article_author)
                 print(article_timestamp)
                 print(img_src)
             except Exception as e:
