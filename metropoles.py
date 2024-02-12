@@ -150,26 +150,26 @@ def scrape_news_noblat_model(soup):
             article_title_html = articles_title_url_html[i].find('h2')
             if(article_title_html is not None): 
                 article_title = article_title_html.text.strip()
-                print('titulo',article_title)
+                # print('titulo',article_title)
             else: 
                 raise Exception("Erro ao extrair titulo do artigo.")
             article_link_html = articles_title_url_html[i].find('a')
             if(article_link_html is not None): 
                 article_link = article_link_html.get('href')
-                print('link',article_link)
+                # print('link',article_link)
             else: 
                 raise Exception("Erro ao extrair link do artigo.")
             article_author_html = article_timestamp_author_html[i].find('p')
             if(article_author_html is not None): 
                 article_author = article_author_html.text.strip()
-                print('autor',article_author)
+                # print('autor',article_author)
             else:
                 article_author = '' # não precisa throlar se nao achar o autor, nao é critico
             article_timestamp_html = article_timestamp_author_html[i].find('time')
             if(article_timestamp_html is not None):
                 article_timestamp = article_timestamp_html.text.strip()
                 article_timestamp = article_timestamp.replace('/', '-')
-                print('tstamp',article_timestamp)
+                # print('tstamp',article_timestamp)
             else: 
                 raise Exception("Erro ao timestamp link do artigo.")
             # article_img_src_html = article_img_src_html[i].find('img')
@@ -182,7 +182,7 @@ def scrape_news_noblat_model(soup):
             article_fonte = 'Metrópoles'
             try:
                 query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
-                print(query)                
+                # print(query)                
                 cursor.execute(query, (article_link,article_title,article_img_src,article_timestamp, article_fonte, article_author))
                 connection.commit()
             except Exception as e:
@@ -208,6 +208,13 @@ def scrape_news(url):
         print(f"Failed to fetch the page. Status code: {response.status_code}")
 
 if __name__ == "__main__":
+    # Get the current timestamp
+    current_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    formatted_timestamp = current_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Executando:", formatted_timestamp)
+
     blog_noblat_link = 'https://www.metropoles.com/blog-do-noblat' #caso especial
     list_of_pages_to_track = [
     'https://www.metropoles.com/colunas/grande-angular',

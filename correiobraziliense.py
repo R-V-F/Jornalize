@@ -87,20 +87,20 @@ def scrape_news(url):
             if(img_src_html is not None): img_src = img_src_html.get('data-src')
             else: img_src = 'NULL'
             author = getAuthor(article_link)
-            print(author)
-            print(article_link)
-            print(i)
+            # print(author)
+            # print(article_link)
+            # print(i)
             try:
                 query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
                 cursor.execute(query, (article_link,article_title,img_src,formatted_datetime, 'Correio Braziliense', author))
                 connection.commit()
-                print(i)
-                print(article_title)
-                print(article_link)
-                print(formatted_datetime)
-                print(img_src)
-                print(author)
-                print(query)
+                # print(i)
+                # print(article_title)
+                # print(article_link)
+                # print(formatted_datetime)
+                # print(img_src)
+                # print(author)
+                # print(query)
             except Exception as e:
                 # Handle other exceptions
                 print(f"An unexpected error occurred:{i} \n{e}")
@@ -108,6 +108,13 @@ def scrape_news(url):
         print(f"Failed to fetch the page. Status code: {response.status_code}")
 
 if __name__ == "__main__":
+    # Get the current timestamp
+    current_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    formatted_timestamp = current_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Executando:", formatted_timestamp)
+
     # Replace this URL with the website you want to scrape
     economia_url = "https://www.correiobraziliense.com.br/economia"
     politica_url = "https://www.correiobraziliense.com.br/politica"

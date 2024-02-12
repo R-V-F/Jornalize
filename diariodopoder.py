@@ -81,11 +81,11 @@ def scrape_news(url):
                 query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte) VALUES (%s, %s, %s, %s, %s);"
                 cursor.execute(query, (article_link,article_title,img_src,formatted_datetime, 'diario do poder'))
                 connection.commit()
-                print(i)
-                print(article_title)
-                print(article_link)
-                print(formatted_datetime)
-                print(img_src)
+                # print(i)
+                # print(article_title)
+                # print(article_link)
+                # print(formatted_datetime)
+                # print(img_src)
             except Exception as e:
                 # Handle other exceptions
                 print(f"An unexpected error occurred:{i} \n{e}")
@@ -93,6 +93,13 @@ def scrape_news(url):
         print(f"Failed to fetch the page. Status code: {response.status_code}")
 
 if __name__ == "__main__":
+    # Get the current timestamp
+    current_timestamp = datetime.now()
+
+    # Print the timestamp in a custom format
+    formatted_timestamp = current_timestamp.strftime("%Y-%m-%d %H:%M:%S")
+    print("Executando:", formatted_timestamp)
+
     # Replace this URL with the website you want to scrape
     target_url = "https://diariodopoder.com.br/politica"
     
