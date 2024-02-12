@@ -3,9 +3,15 @@ from bs4 import BeautifulSoup
 import mysql.connector
 from datetime import datetime
 import json
+import os
+
+directory = os.path.dirname(os.path.abspath(__file__))
+file_name = 'config.json'
+
+full_path = os.path.join(directory, file_name)
 
 # Read the JSON file
-with open('config.json', 'r') as file:
+with open(full_path, 'r') as file:
     config_data = json.load(file)
 
 # Access the values
