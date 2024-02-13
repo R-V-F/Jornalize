@@ -113,11 +113,9 @@ export class AppComponent {
           switch (item.fonte) {
             case 'Poder360':
               item.thumb = "https://static.poder360.com.br/2022/04/logo-poder360-1-1-280x280.png";
-              item.fonte = 'Poder360' // CHANGE THIS LATER OMFG
               break;
-            case 'Folha de S.Paulo':
+            case 'Folha de S. Paulo':
               item.thumb = "https://yt3.googleusercontent.com/N2fcR7REBeaSDM5eVvOJNDZRfn5vwPMSqnYGzBXnVbA9XNeduuQvbJrn745SGmFM9KF4FSSzJTA=s176-c-k-c0x00ffffff-no-rj"
-              item.fonte = 'Folha de S.Paulo'
               break;
             case 'Metropoles':
               item.thumb = "https://yt3.googleusercontent.com/ytc/AIf8zZT9OcRPYvtD7LiHdHVteyqbP4zzdrfcCJov-ORCiG8=s176-c-k-c0x00ffffff-no-rj";
@@ -127,9 +125,8 @@ export class AppComponent {
               item.thumb = "https://media.gazetadopovo.com.br/2019/12/17112031/meta-image-gazeta-do-povo-new.png";
               item.fonte = 'Gazeta do Povo'
               break;
-            case 'correiobraziliense':
+            case 'Correio Braziliense':
               item.thumb = "https://play-lh.googleusercontent.com/MmOuY7R_3lKjXbXjpLjjeUupp0CIfaoI2pJDBaB7uvCQsJ3ndQifS7J7n43K7ZuZ9A";
-              item.fonte = 'Correio Braziliense'
               break;
             case 'diario do poder':
               item.thumb = "https://uploads.diariodopoder.com.br/2022/08/18426125-cch_twitter.jpg"

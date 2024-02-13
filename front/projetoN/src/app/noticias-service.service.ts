@@ -10,6 +10,6 @@ export class NoticiasServiceService {
 
   public fetchNews(term: string) {
      // Make a GET request to your Express server
-     return this.httpClient.get<any[]>(`http://177.71.192.95:3000/v1/search/${term}`);
+     return this.httpClient.get<any[]>(`http://15.228.220.210:3000/v1/search/${term}`);
   }
 }
