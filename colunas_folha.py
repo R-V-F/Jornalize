@@ -8,6 +8,9 @@ import os
 directory = os.path.dirname(os.path.abspath(__file__))
 file_name = 'config.json'
 
+file_colunistas = 'lista_colunistas_folha.txt'
+colunistas_path = os.path.join(directory,file_colunistas)
+
 full_path = os.path.join(directory, file_name)
 
 # Read the JSON file
@@ -30,116 +33,93 @@ connection = mysql.connector.connect(
 
 # Create a cursor object to interact with the database
 cursor = connection.cursor()
+# Dont waste time on duplicates!
+urls_query = f"SELECT url FROM db_projn.noticias WHERE fonte LIKE '%Folha%';"
+urls_list = []
+cursor.execute(urls_query)
+rows = cursor.fetchall()
+for row in rows:
+    urls_list.append(row[0])
 
-def getAuthor(url):
-     # Send an HTTP request to the URL
+def scrape_colunista(url):
     response = requests.get(url)
-
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
         # Parse the HTML content of the page
         soup = BeautifulSoup(response.text, 'html.parser')
-        article_author_html = soup.find('strong','c-signature__author')
-        if(article_author_html is not None):
-            article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
-            return article_author
+        stop_flag = False
+        ## COLUNISTA
+        colunista_nome_html = soup.find('h4','c-top-columnist__name')
+        if(colunista_nome_html is not None):
+            colunista_nome = colunista_nome_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+            # print(colunista_nome)
         else:
-            article_author_html = soup.find('h4','c-top-columnist__name')
-            if(article_author_html is not None):
-                article_author = article_author_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
-                return article_author
-            else:
-                return ''
-    else:
-        print(f"Failed to fetch the page. Status code: {response.status_code}")
+            return
+        ## BLOCK 1 - HEADLINE
+        coluna_headline_html = soup.find('h2','c-headline__title')
+        if(coluna_headline_html is not None):
+            coluna_headline = coluna_headline_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+            # print(coluna_headline)
+        else:
+            stop_flag = True
+        coluna_headline_link_html = soup.find('a','c-headline__url')
+        if(coluna_headline_link_html is not None):
+            coluna_headline_link = coluna_headline_link_html.get('href')
+            # print(coluna_headline_link)
+        else:
+            stop_flag = True
+        coluna_headline_timestamp_html = soup.find('time','c-headline__dateline')
+        if(coluna_headline_timestamp_html is not None):
+            coluna_headline_timestamp = coluna_headline_timestamp_html.get('datetime')
+            # print(coluna_headline_timestamp)
+        else:
+            stop_flag = True
+        if (stop_flag is True): 
+            print('Erro com a flag.')
+            return
+        try:
+            query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
+            cursor.execute(query, (coluna_headline_link,coluna_headline,'',coluna_headline_timestamp, 'Folha de S. Paulo',colunista_nome))
+            connection.commit()
+        except Exception as e:
+            # Handle other exceptions
+            if('Duplicate' not in str(e)): print(f"An unexpected error occurred:\n{e}")
 
-def scrape_news(url):
-    # Send an HTTP request to the URL
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the HTML content of the page
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Extract information based on the HTML structure of the website
-        latest_articles_ol = soup.find('ol', 'u-list-unstyled')
-        latest_articles_html = latest_articles_ol.find_all('li','c-headline')
-        i = 0
-        # Print the titles of the articles
-        for latest in latest_articles_html:
-            i += 1
-            article_title_html = latest.find('h2')
-            article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore')
-            article_link_html = latest.find('a')
-            article_link = article_link_html.get('href')
-            # if(article_link in urls_list): 
-            #     print('repeated result')
-            #     continue
-            img_src_html = latest.find('img','c-headline__image')
-            if(img_src_html is not None): img_src = img_src_html.get('data-src')
-            else: img_src = 'NULL'
-            article_timestamp_html = latest.find('time')
-            article_timestamp = article_timestamp_html.get('datetime')
-            article_author = getAuthor(article_link)            
-            try:
-                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
-                cursor.execute(query, (article_link,article_title,img_src,article_timestamp, 'Folha de S. Paulo',article_author))
-                connection.commit()
-                # print(i)
-                # print(article_title)
-                # print(article_link)
-                # print(article_author)
-                # print(article_timestamp)
-                # print(img_src)
-            except Exception as e:
-                # Handle other exceptions
-                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:{i} \n{e}")
-    else:
-        print(f"Failed to fetch the page. Status code: {response.status_code}")
-
-def scrape_colunas(url):
-     # Send an HTTP request to the URL
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        print('caralho')
-        # Parse the HTML content of the page
-        soup = BeautifulSoup(response.text, 'html.parser')
-        colunas_proxy_html = soup.find("div", id="ultimas")
-        test = soup.find('block')
-        colunas_html = soup.findAll("li")
-        print(test)
-        for coluna in colunas_html:
+        ## BLOCK 2 - LIST
+        html = soup.find('ol', 'u-list-unstyled')
+        coluna_list_html = html.findAll('li')
+        for coluna in coluna_list_html:
             coluna_title_html = coluna.find('h2','c-headline__title')
-            if(coluna_title_html is not None): 
-                coluna_title = coluna_title_html.text.strip()
+            if(coluna_title_html is not None):
+                coluna_title = coluna_title_html.text.strip().encode('latin-1').decode('utf-8', 'ignore')
+                # print(coluna_title)
             else:
                 continue
-            coluna_link_html = coluna.find('a','u-link-clean')
+            coluna_link_html = coluna.find('a','c-headline__url')
             if(coluna_link_html is not None):
                 coluna_link = coluna_link_html.get('href')
+                if(coluna_link in urls_list): continue
+                # print(coluna_link)
             else:
                 continue
-            coluna_author_html - coluna.find('h3','c-author__kicker')
-            if(coluna_author_html is not None): 
-                coluna_author = coluna_author_html.text.strip()
-            else:
-                coluna_author = ''
-            coluna_imgsrc_html = coluna.find('img')
-            if(coluna_imgsrc_html is not None):
-                coluna_imgsrc = coluna_imgsrc_html.get('src')
-            else:
-                coluna_imgsrc = ''
-            coluna_timestamp_html = coluna.find('time')
+            coluna_timestamp_html = coluna.find('time','c-headline__dateline')
             if(coluna_timestamp_html is not None):
                 coluna_timestamp = coluna_timestamp_html.get('datetime')
+                # print(coluna_timestamp)
             else:
                 continue
-            print(coluna_title+'\n',coluna_link+'\n',coluna_author+'\n',coluna_imgsrc+'\n',coluna_timestamp+'\n')
+            try:
+                query = f"INSERT INTO db_projn.noticias (url,titulo, imgsrc, data, fonte, autor) VALUES (%s, %s, %s, %s, %s, %s);"
+                cursor.execute(query, (coluna_link,coluna_title,'',coluna_timestamp, 'Folha de S. Paulo',colunista_nome))
+                connection.commit()
+            except Exception as e:
+                # Handle other exceptions
+                if('Duplicate' not in str(e)): print(f"An unexpected error occurred:\n{e}")
     else:
         print(f"Failed to fetch the page. Status code: {response.status_code}")
+
+
+
 if __name__ == "__main__":
     # Get the current timestamp
     current_timestamp = datetime.now()
@@ -148,30 +128,34 @@ if __name__ == "__main__":
     formatted_timestamp = current_timestamp.strftime("%Y-%m-%d %H:%M:%S")
     print("Executando:", formatted_timestamp)
 
-    with open('Colunas e Blogs _ Folha.html', 'r', encoding='utf-8') as file:
-        # Read the content of the file
-        html_content = file.read()
+    with open(colunistas_path, 'r') as file:
+        lista_link_colunistas = file.read().splitlines()
+
+    for url in lista_link_colunistas:
+        scrape_colunista(url)
+    #################### EXECUTE ESSA PARTE PARA ATUALIZAR LISTA DE COLUNISTAS
+    #################### FAZER DOWNLOAD DESSA PAGINA https://www1.folha.uol.com.br/colunaseblogs/#colunas-e-blogs
+    # # with open('Colunas e Blogs _ Folha.html', 'r', encoding='utf-8') as file:
+    # #     # Read the content of the file
+    # #     html_content = file.read()
     
-    soup = BeautifulSoup(html_content, 'html.parser')
+    # # soup = BeautifulSoup(html_content, 'html.parser')
 
-    authors_html = soup.findAll('h3','c-author__kicker')
-    i = 0
-    for html in authors_html:
-        authors_a_html = html.find('a')
-        authors_link = authors_a_html.get('href')
-        if ('blog' not in authors_link) and ('f5' not in authors_link):
-            i += 1
-            print(authors_link, i) 
+    # # authors_html = soup.findAll('div','c-author--blog-column')
+    # # i = 0
+    # # for html in authors_html:
+    # #     authors_a_html = html.find('a')
+    # #     author_link = authors_a_html.get('href')
+    # #     author_photo_html = html.find('img')
+    # #     if (author_photo_html is not None): 
+    # #         author_photo = author_photo_html.get('data-src')
+    # #     else:
+    # #         author_photo = 'pinto'
+    # #     if ('blog' not in author_link) and ('f5' not in author_link):
+    # #         i += 1
+    # #         print(author_link)
 
-    # scrape_colunas('https://www1.folha.uol.com.br/colunaseblogs/')
-
-    # # Replace this URL with the website you want to scrape
-    # economia_url = "https://www1.folha.uol.com.br/mercado/"
-    # politica_url = "https://www1.folha.uol.com.br/poder/"
-    
-    # scrape_news(economia_url)
-    # scrape_news(politica_url)
-    # # Close the cursor and connection
+    # scrape_colunas('https://www1.folha.uol.com.br/colunaseblogs/') # ESSA ABORDAGEM N FUNCIONA PQ USA JS
 
     # Get the current timestamp
     end_timestamp = datetime.now()
