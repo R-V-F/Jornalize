@@ -1,3 +1,4 @@
+console.log('teste')
 async function connect(mysql){
   if(global.connection && global.connection.state !== 'disconnected') return global.connection;
   const connection = await mysql.createConnection({
@@ -14,7 +15,7 @@ async function main() {
   const mysql = require("mysql2");
   const express = require("express");
   var cors = require('cors');
-
+  console.log('oi');
   const app = express();
   app.use(cors());
 
