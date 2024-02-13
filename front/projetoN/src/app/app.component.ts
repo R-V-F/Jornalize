@@ -111,19 +111,19 @@ export class AppComponent {
       (data) => {
         for(let item of data) {
           switch (item.fonte) {
-            case 'poder360':
+            case 'Poder360':
               item.thumb = "https://static.poder360.com.br/2022/04/logo-poder360-1-1-280x280.png";
               item.fonte = 'Poder360' // CHANGE THIS LATER OMFG
               break;
-            case 'folha':
+            case 'Folha de S.Paulo':
               item.thumb = "https://yt3.googleusercontent.com/N2fcR7REBeaSDM5eVvOJNDZRfn5vwPMSqnYGzBXnVbA9XNeduuQvbJrn745SGmFM9KF4FSSzJTA=s176-c-k-c0x00ffffff-no-rj"
               item.fonte = 'Folha de S.Paulo'
               break;
-            case 'metropoles':
+            case 'Metropoles':
               item.thumb = "https://yt3.googleusercontent.com/ytc/AIf8zZT9OcRPYvtD7LiHdHVteyqbP4zzdrfcCJov-ORCiG8=s176-c-k-c0x00ffffff-no-rj";
               item.fonte = 'Metrópoles'
               break;
-            case 'gazeta':
+            case 'Gazeta':
               item.thumb = "https://media.gazetadopovo.com.br/2019/12/17112031/meta-image-gazeta-do-povo-new.png";
               item.fonte = 'Gazeta do Povo'
               break;
