@@ -25,7 +25,7 @@ async function main() {
   app.get('/v1/search/:term', (req, res) => {
     const term = req.params.term;
     console.log(`got it!\n${term}`)
-    const queryString = `SELECT * FROM db_projn.noticias WHERE titulo LIKE '%${term}%' ORDER BY data DESC;`;
+    const queryString = `SELECT * FROM db_projn.noticias WHERE titulo LIKE '%${term}%' ORDER BY data DESC LIMIT 30;`;
     connection.query(queryString, (error, results, fields) => {
         if (error) throw error;
         console.log(results);
