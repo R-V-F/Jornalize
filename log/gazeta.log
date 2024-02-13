@@ -22,3 +22,160 @@ Executando: 2024-02-12 21:25:04
 Fim: 2024-02-12 21:25:28
 Executando: 2024-02-12 21:30:04
 Fim: 2024-02-12 21:30:29
+Executando: 2024-02-12 21:35:04
+Fim: 2024-02-12 21:35:30
+Executando: 2024-02-12 21:40:03
+Fim: 2024-02-12 21:40:25
+Executando: 2024-02-12 21:45:05
+Fim: 2024-02-12 21:45:29
+Executando: 2024-02-12 21:50:04
+Fim: 2024-02-12 21:50:26
+Executando: 2024-02-12 21:55:04
+Fim: 2024-02-12 21:55:26
+Executando: 2024-02-12 22:00:04
+Fim: 2024-02-12 22:00:26
+Executando: 2024-02-12 22:05:03
+Fim: 2024-02-12 22:05:26
+Executando: 2024-02-12 22:10:03
+Fim: 2024-02-12 22:10:26
+Executando: 2024-02-12 22:15:04
+Fim: 2024-02-12 22:15:26
+Executando: 2024-02-12 22:20:03
+Fim: 2024-02-12 22:20:26
+Executando: 2024-02-12 22:25:03
+Fim: 2024-02-12 22:25:25
+Executando: 2024-02-12 22:30:03
+Fim: 2024-02-12 22:30:26
+Executando: 2024-02-12 22:35:03
+Fim: 2024-02-12 22:35:26
+Executando: 2024-02-12 22:40:04
+Fim: 2024-02-12 22:40:27
+Executando: 2024-02-12 22:45:03
+Fim: 2024-02-12 22:45:27
+Executando: 2024-02-12 22:50:03
+Fim: 2024-02-12 22:50:26
+Executando: 2024-02-12 22:55:03
+Fim: 2024-02-12 22:55:25
+Executando: 2024-02-12 23:00:04
+Fim: 2024-02-12 23:00:27
+Executando: 2024-02-12 23:05:04
+Fim: 2024-02-12 23:05:26
+Executando: 2024-02-12 23:10:03
+Fim: 2024-02-12 23:10:27
+Executando: 2024-02-12 23:15:03
+Fim: 2024-02-12 23:15:26
+Executando: 2024-02-12 23:20:04
+Fim: 2024-02-12 23:20:27
+Executando: 2024-02-12 23:25:03
+Fim: 2024-02-12 23:25:25
+Executando: 2024-02-12 23:30:03
+Fim: 2024-02-12 23:30:25
+Executando: 2024-02-12 23:35:03
+Fim: 2024-02-12 23:35:25
+Executando: 2024-02-12 23:40:04
+Fim: 2024-02-12 23:40:26
+Executando: 2024-02-12 23:45:03
+Fim: 2024-02-12 23:45:26
+Executando: 2024-02-12 23:50:03
+Fim: 2024-02-12 23:50:25
+Executando: 2024-02-12 23:55:03
+Fim: 2024-02-12 23:55:26
+Executando: 2024-02-13 00:00:03
+Fim: 2024-02-13 00:00:25
+Executando: 2024-02-13 00:05:03
+Fim: 2024-02-13 00:05:27
+Executando: 2024-02-13 00:10:04
+Fim: 2024-02-13 00:10:27
+Executando: 2024-02-13 00:15:03
+Fim: 2024-02-13 00:15:26
+Executando: 2024-02-13 00:20:04
+Traceback (most recent call last):
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 121, in <module>
+    scrape_news(target_url)
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 80, in scrape_news
+    article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u201c' in position 37: ordinal not in range(256)
+Executando: 2024-02-13 00:25:03
+Traceback (most recent call last):
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 121, in <module>
+    scrape_news(target_url)
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 80, in scrape_news
+    article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u201c' in position 37: ordinal not in range(256)
+Executando: 2024-02-13 00:30:03
+Traceback (most recent call last):
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 121, in <module>
+    scrape_news(target_url)
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 80, in scrape_news
+    article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u201c' in position 37: ordinal not in range(256)
+Executando: 2024-02-13 00:35:03
+Fim: 2024-02-13 00:35:26
+Executando: 2024-02-13 00:40:03
+Fim: 2024-02-13 00:40:25
+Executando: 2024-02-13 00:45:03
+Fim: 2024-02-13 00:45:25
+Executando: 2024-02-13 00:50:03
+Fim: 2024-02-13 00:50:25
+Executando: 2024-02-13 00:55:03
+Fim: 2024-02-13 00:55:25
+Executando: 2024-02-13 01:00:03
+Fim: 2024-02-13 01:00:26
+Executando: 2024-02-13 01:05:04
+Fim: 2024-02-13 01:05:27
+Executando: 2024-02-13 01:10:04
+Fim: 2024-02-13 01:10:25
+Executando: 2024-02-13 01:15:04
+Fim: 2024-02-13 01:15:26
+Executando: 2024-02-13 01:20:04
+Fim: 2024-02-13 01:20:26
+Executando: 2024-02-13 01:25:04
+Fim: 2024-02-13 01:25:27
+Executando: 2024-02-13 01:30:04
+Fim: 2024-02-13 01:30:27
+Executando: 2024-02-13 01:35:03
+Fim: 2024-02-13 01:35:25
+Executando: 2024-02-13 01:40:03
+Fim: 2024-02-13 01:40:25
+Executando: 2024-02-13 01:45:03
+Fim: 2024-02-13 01:45:26
+Executando: 2024-02-13 01:50:04
+Fim: 2024-02-13 01:50:26
+Executando: 2024-02-13 01:55:03
+Traceback (most recent call last):
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 121, in <module>
+    scrape_news(target_url)
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 80, in scrape_news
+    article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u201c' in position 37: ordinal not in range(256)
+Executando: 2024-02-13 02:00:03
+Traceback (most recent call last):
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 121, in <module>
+    scrape_news(target_url)
+  File "/home/ubuntu/ProjetoN/Jornalize/gazeta.py", line 80, in scrape_news
+    article_title = article_title_html.text.encode('latin-1').decode('utf-8', 'ignore') # tira os caracteres estranhos
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u201c' in position 37: ordinal not in range(256)
+Executando: 2024-02-13 02:05:04
+Fim: 2024-02-13 02:05:27
+Executando: 2024-02-13 02:10:04
+Fim: 2024-02-13 02:10:26
+Executando: 2024-02-13 02:15:03
+Fim: 2024-02-13 02:15:26
+Executando: 2024-02-13 02:20:03
+Fim: 2024-02-13 02:20:26
+Executando: 2024-02-13 02:25:04
+Fim: 2024-02-13 02:25:26
+Executando: 2024-02-13 02:30:03
+Fim: 2024-02-13 02:30:26
+Executando: 2024-02-13 02:35:03
+Fim: 2024-02-13 02:35:26
+Executando: 2024-02-13 02:40:04
+Fim: 2024-02-13 02:40:27
+Executando: 2024-02-13 02:45:04
+Fim: 2024-02-13 02:45:27
+Executando: 2024-02-13 02:50:03
+Fim: 2024-02-13 02:50:25
+Executando: 2024-02-13 02:55:03
+Fim: 2024-02-13 02:55:25
+Executando: 2024-02-13 03:00:03
+Fim: 2024-02-13 03:00:25
